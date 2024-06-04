@@ -1,0 +1,6 @@
+@WAD11991_HostAddress = http://localhost:5187
+
+GET {{WAD11991_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
