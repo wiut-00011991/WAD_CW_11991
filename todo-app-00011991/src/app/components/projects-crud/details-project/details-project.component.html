@@ -1,0 +1,20 @@
+<div class="flex mt-8 justify-center">
+    <mat-card class="shadow w-6/12" *ngIf="projectDetails">
+        <mat-card-content>
+            <div class="p-10">
+                <h2 class="text-3xl font-bold mb-6">{{ projectDetails.name }}</h2>
+                <p class="text-slate-500">{{ projectDetails.description }}</p>
+                <p><span class="font-medium">Start Date: </span><span class="text-slate-500">{{ projectDetails.startDate }}</span></p>
+                <p><span class="font-medium">End Date: </span><span class="text-slate-500">{{ projectDetails.endDate ? projectDetails.endDate : "N/A" }}</span></p>
+                <div class="mt-4" *ngIf="tasks && tasks.length > 0">
+                    <span class="font-medium">Tasks:</span>
+                    <mat-chip class="ml-2" *ngFor="let task of tasks">{{ task.name }}</mat-chip>
+                </div>
+                <div *ngIf="!tasks || tasks.length === 0">
+                    <span class="font-medium italic">No tasks available</span>
+                </div>
+            </div>
+            <button class="w-full" mat-raised-button color="accent" (click)="goHome()">Go Home</button>
+        </mat-card-content>
+    </mat-card>
+</div>

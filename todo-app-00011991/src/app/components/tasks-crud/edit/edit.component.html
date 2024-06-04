@@ -1,0 +1,41 @@
+<div class="p-8 mt-8 flex justify-center">
+    <form class="shadow border w-6/12 py-8 px-6 rounded-2xl">
+        <p class="text-3xl font-bold">Edit Task</p>
+        <div class="mt-6">
+            <mat-form-field class="w-full">
+                <mat-label>Name</mat-label>
+                <input matInput name="name" type="text" [(ngModel)]="editTask.name">
+            </mat-form-field>
+        </div>
+        <div class="flex">
+            <mat-form-field class="w-full">
+                <mat-label>Description </mat-label>
+                <input matInput name="description" type="text" [(ngModel)]="editTask.description">
+            </mat-form-field>
+        </div>
+        <div class="flex">
+            <mat-form-field class="w-full">
+                <mat-label>Contribution Comment</mat-label>
+                <input matInput name="contributionComment" type="text" [(ngModel)]="editTask.contributionComment">
+            </mat-form-field>
+        </div>
+        <div class="flex">
+            <mat-form-field class="w-full">
+                <mat-label>Choose Project</mat-label>
+                <mat-select [(ngModel)]="pID" [(value)]="selected" name="Project">
+                    @for(p of projectObject; track p)
+                    {
+                    <mat-option [value]="p.id">{{p.name}}</mat-option>
+                    }
+                </mat-select>
+
+            </mat-form-field>
+        </div>
+        <div class="flex justify-around">
+            <button mat-raised-button  (click)="goHome()">Cancel</button>
+            <button mat-raised-button color="primary" (click)="edit()">Edit</button>
+        </div>
+    </form>
+</div>
+
+

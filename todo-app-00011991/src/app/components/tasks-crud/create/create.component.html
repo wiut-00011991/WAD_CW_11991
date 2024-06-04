@@ -1,0 +1,49 @@
+<div class="p-8 mt-8 flex justify-center">
+    <form class="shadow border w-6/12 py-8 px-6 rounded-2xl">
+        <p class="text-3xl font-bold">Create Task</p>
+        <div class="mt-6">
+            <mat-form-field class="w-full">
+                <mat-label>Task Name</mat-label>
+                <input matInput name="name" type="text" [(ngModel)]="createTask.name" required>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field class="w-full">
+                <mat-label>Description </mat-label>
+                <input matInput name="description" type="text" [(ngModel)]="createTask.description">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field class="w-full">
+                <mat-label>Select Due Date</mat-label>
+                <input matInput [matDatepicker]="dueDatepicker" name="dueDate" [(ngModel)]="createTask.dueDate">
+                <mat-datepicker-toggle matIconSuffix [for]="dueDatepicker"></mat-datepicker-toggle>
+                <mat-datepicker #dueDatepicker></mat-datepicker>
+              </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field class="w-full">
+                <mat-label>Contribution Comment</mat-label>
+                <input matInput name="contributionComment" type="text" [(ngModel)]="createTask.contributionComment" required>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field class="w-full">
+                <mat-label>Choose Project</mat-label>
+                <mat-select [(ngModel)]="pID" name="Project">
+                    @for(p of project; track p)
+                    {
+                    <mat-option [value]="p.id">{{p.name}}</mat-option>
+                    }
+                </mat-select>
+
+            </mat-form-field>
+        </div>
+        <div class="flex justify-around">
+            <button mat-raised-button (click)="cancel()">Cancel</button>
+            <button mat-raised-button color="primary" (click)="create()">Create</button>
+        </div>
+    </form>
+</div>
+
+<!-- ngModel for bindings -->
