@@ -16,9 +16,9 @@ This application was developed for Web Application module, as coursework portfol
 
 ## Screenshots
 
-[Screenshots 1](https://www.take-a-screenshot.org/)
-[Screenshots 2](https://www.take-a-screenshot.org/)
-[Screenshots 3](https://www.youtube.com/watch?v=Pr92NvDcsFs)
+[Screenshots 1](https://github.com/wiut-00011991/WAD_CW_11991/blob/main/main_page.png)
+[Screenshots 2](https://github.com/wiut-00011991/WAD_CW_11991/blob/main/Task.png)
+[Screenshots 3](https://github.com/wiut-00011991/WAD_CW_11991/blob/main/Project.png)
 
 ## Application prerequisites
 ### For the backend (ASP.NET Web API):
